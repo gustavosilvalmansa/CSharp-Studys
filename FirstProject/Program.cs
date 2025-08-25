@@ -101,6 +101,38 @@ namespace FirstProject
         // -----------------------------
         static void Main(string[] args)
         {
+
+            Triangulo x, y;
+            x = new Triangulo();
+            y = new Triangulo();
+
+
+            Console.WriteLine("=== Cálculo de Área de Triângulos ===");
+            Console.WriteLine("Entre com as medidas do triângulo X:");
+            x.A = LerDouble("A: ");
+            x.B = LerDouble("B: ");
+            x.C = LerDouble("C: ");
+            Console.WriteLine("Entre com as medidas do triângulo Y:");
+            y.A = LerDouble("A: ");
+            y.B = LerDouble("B: ");
+            y.C = LerDouble("C: ");
+          
+            double areaX = x.Area();
+            double areaY = y.Area();
+
+            Console.WriteLine($"Área de X = {areaX:F4}");
+            Console.WriteLine($"Área de Y = {areaY:F4}");
+            if (areaX > areaY)
+                Console.WriteLine("Maior área: X");
+            else if (areaY > areaX)
+                Console.WriteLine("Maior área: Y");
+            else
+                Console.WriteLine("Áreas iguais");
+            // Fim do exercício de triângulos
+
+
+
+
             Console.WriteLine("=== Equação do 2º Grau ===");
             CalcularEquacaoSegundoGrau(1, -3, -4);
 
