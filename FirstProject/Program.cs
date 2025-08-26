@@ -92,7 +92,7 @@ namespace FirstProject
         {
             int N = LerInteiro("Digite a quantidade de números a exibir: ");
             for (int i = 0; i < N; i++)
-                Console.Write($"{i} ");
+                Console.Write($"{i+1} ");
             Console.WriteLine();
         }
 
@@ -129,6 +129,27 @@ namespace FirstProject
             else
                 Console.WriteLine("Áreas iguais");
             // Fim do exercício de triângulos
+            Console.WriteLine("\n=== Classe Produto ===");
+            Produto p = new Produto("TV", 500.0, 10);
+
+
+            
+            Console.Write("Nome do produto: ");
+            string Nome = Console.ReadLine();
+            double Preco = LerDouble("Preço do produto: ");
+            int Quantidade = LerInteiro("Quantidade no estoque: ");
+
+            p = new Produto(Nome, Preco, Quantidade);
+
+            Console.WriteLine($"Dados do produto: {p}");
+            int qte = LerInteiro("Digite o número de produtos a ser adicionado ao estoque: ");
+            p.AdicionarProdutos(qte);
+            Console.WriteLine($"Dados atualizados: {p}");
+            qte = LerInteiro("Digite o número de produtos a ser removido do estoque: ");
+            p.RemoverProdutos(qte);
+            Console.WriteLine($"Dados atualizados: {p}");
+            
+            // Fim do exercício de produto
 
 
 
