@@ -8,17 +8,40 @@ namespace FirstProject
 {
     class Produto
     {
-        public string Nome { get; set; }
-        public double Preco { get; set; }
-        public int Quantidade { get; set; }
+        private string _nome;
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
 
-        public Produto(string Nome, double Preco, int Quantidade)
+
+        //PROPERTIES
+        public string Nome
         {
-            this.Nome = Nome;
-            this.Preco = Preco;
-            this.Quantidade = Quantidade;
+            get { return _nome; }
+            set
+            {
+                if (value != null && value.Length > 1)
+                {
+                    _nome = value;
+                }
+            }
         }
 
+   
+
+
+
+        // Construtor principal
+        public Produto(string nome, double preco, int quantidade)
+        {
+            this._nome = nome;
+            this.Preco = preco;
+            this.Quantidade = quantidade;
+        }
+
+        // Sobrecarga: caso não informe quantidade, assume 0
+        public Produto(string nome, double preco) : this(nome, preco, 0)
+        {
+        }
         public double ValorTotalEmEstoque()
         {
             return Preco * Quantidade;
@@ -33,7 +56,7 @@ namespace FirstProject
         }
         public override string ToString()
         {
-            return $"{Nome}, $ {Preco.ToString("F2")}, {Quantidade} unidades, Total: $ {ValorTotalEmEstoque().ToString("F2")}";
+            return $"{_nome}, $ {Preco.ToString("F2")}, {Quantidade} unidades, Total: $ {ValorTotalEmEstoque().ToString("F2")}";
         }
 
 

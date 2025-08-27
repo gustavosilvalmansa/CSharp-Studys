@@ -141,6 +141,16 @@ namespace FirstProject
 
             p = new Produto(Nome, Preco, Quantidade);
 
+            p.Nome = "TV 4K";
+            Console.WriteLine("=== Teste de property e setter ===");
+
+            Console.WriteLine($"Nome atualizado: {p.Nome}");
+            Console.WriteLine($"Preço: {p.GetPreco()}");
+
+
+            Console.WriteLine("=== Fim do teste ===");
+
+
             Console.WriteLine($"Dados do produto: {p}");
             int qte = LerInteiro("Digite o número de produtos a ser adicionado ao estoque: ");
             p.AdicionarProdutos(qte);
