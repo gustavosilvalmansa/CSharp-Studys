@@ -1,9 +1,10 @@
-﻿using System;
+﻿using FirstProject;
+using System;
 using System.Globalization;
 
 namespace FirstProject
 {
-    internal class Program
+    class Program
     {
         // -----------------------------
         // Funções utilitárias matemáticas
@@ -92,7 +93,7 @@ namespace FirstProject
         {
             int N = LerInteiro("Digite a quantidade de números a exibir: ");
             for (int i = 0; i < N; i++)
-                Console.Write($"{i+1} ");
+                Console.Write($"{i + 1} ");
             Console.WriteLine();
         }
 
@@ -101,11 +102,8 @@ namespace FirstProject
         // -----------------------------
         static void Main(string[] args)
         {
-
-            Triangulo x, y;
-            x = new Triangulo();
-            y = new Triangulo();
-
+            Triangulo x = new Triangulo();
+            Triangulo y = new Triangulo();
 
             Console.WriteLine("=== Cálculo de Área de Triângulos ===");
             Console.WriteLine("Entre com as medidas do triângulo X:");
@@ -116,7 +114,7 @@ namespace FirstProject
             y.A = LerDouble("A: ");
             y.B = LerDouble("B: ");
             y.C = LerDouble("C: ");
-          
+
             double areaX = x.Area();
             double areaY = y.Area();
 
@@ -128,12 +126,11 @@ namespace FirstProject
                 Console.WriteLine("Maior área: Y");
             else
                 Console.WriteLine("Áreas iguais");
+
             // Fim do exercício de triângulos
             Console.WriteLine("\n=== Classe Produto ===");
             Produto p = new Produto("TV", 500.0, 10);
 
-
-            
             Console.Write("Nome do produto: ");
             string Nome = Console.ReadLine();
             double Preco = LerDouble("Preço do produto: ");
@@ -145,11 +142,9 @@ namespace FirstProject
             Console.WriteLine("=== Teste de property e setter ===");
 
             Console.WriteLine($"Nome atualizado: {p.Nome}");
-            Console.WriteLine($"Preço: {p.GetPreco()}");
-
+            Console.WriteLine($"Preço: {p.Preco}");
 
             Console.WriteLine("=== Fim do teste ===");
-
 
             Console.WriteLine($"Dados do produto: {p}");
             int qte = LerInteiro("Digite o número de produtos a ser adicionado ao estoque: ");
@@ -158,12 +153,8 @@ namespace FirstProject
             qte = LerInteiro("Digite o número de produtos a ser removido do estoque: ");
             p.RemoverProdutos(qte);
             Console.WriteLine($"Dados atualizados: {p}");
-            
+
             // Fim do exercício de produto
-
-
-
-
             Console.WriteLine("=== Equação do 2º Grau ===");
             CalcularEquacaoSegundoGrau(1, -3, -4);
 
@@ -179,6 +170,9 @@ namespace FirstProject
 
             Console.WriteLine("\n=== Sequência de números ===");
             MostrarSequencia();
+
+
+
         }
     }
 }
